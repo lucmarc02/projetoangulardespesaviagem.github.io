@@ -1,0 +1,12 @@
+//TABELA objetodespesa.
+
+INSERT INTO public.objetodespesa(nome_objeto, medida_objeto) VALUES ('PASSAGENS', 'UND');
+INSERT INTO public.objetodespesa(nome_objeto, medida_objeto) VALUES ('METRÔ (BILHETE)', 'UND');
+INSERT INTO public.objetodespesa(nome_objeto, medida_objeto) VALUES ('TAXI (RECIBO / TICKET)', 'UND');
+INSERT INTO public.objetodespesa(nome_objeto, medida_objeto) VALUES ('COMBUSTÍVEL (CUPOM FISCAL / NOTA FISCAL)', 'UND');
+INSERT INTO public.objetodespesa(nome_objeto, medida_objeto) VALUES ('ESTACIONAMENTO (TICKET / RECIBO)', 'UND');
+INSERT INTO public.objetodespesa(nome_objeto, medida_objeto) VALUES ('REFEIÇÕES (ALMOÇO OU JANTAR) (CUPOM FISCAL, NF)', 'UND');
+INSERT INTO public.objetodespesa(nome_objeto, medida_objeto) VALUES ('LANCHES / CAFÉ  (CUPOM FISCAL, NOTA FISCAL)', 'UND');
+INSERT INTO public.objetodespesa(nome_objeto, medida_objeto) VALUES ('HOTEL (NOTA FISCAL)', 'UND');
+INSERT INTO public.objetodespesa(nome_objeto, medida_objeto) VALUES ('AGUA MINERAL', 'UND');
+INSERT INTO public.objetodespesa(nome_objeto, medida_objeto) VALUES ('OUTROS', 'UND');

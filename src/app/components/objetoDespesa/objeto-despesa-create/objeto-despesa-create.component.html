@@ -1,0 +1,35 @@
+
+
+<mat-card>
+
+  <mat-card-title>{{objetoDespesa.id != 0 ? 'Editar Objeto da Despesa' : 'Novo Objeto da Despesa'}}</mat-card-title>
+
+  <form>
+
+    <mat-form-field>
+      <mat-label>Nome do Objeto</mat-label>
+      <input matInput name="nomeobjeto" [(ngModel)]="objetoDespesa.nomeobjeto" required />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Medida do Objeto</mat-label>
+      <input matInput name="medidaobjeto" [(ngModel)]="objetoDespesa.medidaobjeto" required  maxlength="3"/>
+    </mat-form-field>
+
+
+
+  </form>
+
+  <div>
+    <button
+    mat-raised-button
+    color="primary"
+    (click) = "saveObjeto()">
+      {{objetoDespesa.id != 0 ? 'Editar' : 'Salvar'}}
+    </button>
+    <button mat-raised-button color="warn" (click)="cancel()" style="margin-left: 5px;">
+      Cancelar
+    </button>
+  </div>
+
+</mat-card>

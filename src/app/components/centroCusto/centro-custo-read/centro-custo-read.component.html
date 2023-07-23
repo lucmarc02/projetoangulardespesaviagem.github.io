@@ -1,0 +1,64 @@
+<mat-card>
+
+  <mat-form-field class="filter-form-field">
+    <mat-label>Pesquisar Centro Custo</mat-label>
+    <input matInput (keyup)="applyFilter($event)" #input>
+  </mat-form-field>
+
+  <table mat-table [dataSource]="dataSource">
+    <!-- ID Column -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef>Id</th>
+      <td mat-cell *matCellDef="let row">{{ row.id }}</td>
+    </ng-container>
+
+    <!-- Objeto Column -->
+    <ng-container matColumnDef="nomeCentro">
+      <th mat-header-cell *matHeaderCellDef>Centro de Custo</th>
+      <td mat-cell *matCellDef="let row">{{ row.nomeCentro }}</td>
+    </ng-container>
+
+      <!-- Medida Column -->
+      <ng-container matColumnDef="codigocentrocusto">
+        <th mat-header-cell *matHeaderCellDef>Código Centro de Custo</th>
+        <td mat-cell *matCellDef="let row">{{ row.codigocentrocusto }}</td>
+      </ng-container>
+
+        <!-- Medida Column -->
+        <ng-container matColumnDef="unidadeDespesa">
+          <th mat-header-cell *matHeaderCellDef>Unidade Despesa</th>
+          <td mat-cell *matCellDef="let row">{{ row.unidadeDespesa.nome }}</td>
+        </ng-container>
+
+            <!-- Medida Column -->
+            <ng-container matColumnDef="ativo">
+              <th mat-header-cell *matHeaderCellDef>Ativo/Inativo</th>
+              <td mat-cell *matCellDef="let row">{{ row.ativo ? "SIM" : "NÃO"}} </td>
+            </ng-container>
+
+    <!-- Actions Column -->
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef class="align-center">Ações</th>
+      <td mat-cell *matCellDef="let row" class="align-center">
+        <a routerLink="/centroCusto/update/{{ row.id }}" class="edit">
+          <i class="material-icons">edit</i>
+        </a>
+        <a (click)="deleteCentroCustoByid(row.id)" class="delete" *ngIf="user.admin">
+          <i class="material-icons">delete</i>
+        </a>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+
+    <!-- Row shown when there is no matching data. -->
+  <tr class="mat-row" *matNoDataRow>
+    <td class="mat-cell"
+        [colSpan]="displayedColumns.length" class="font-msg">
+        Nenhum centro de custo encontrado na pesquisa "{{input.value}}"
+    </td>
+  </tr>
+
+  </table>
+</mat-card>

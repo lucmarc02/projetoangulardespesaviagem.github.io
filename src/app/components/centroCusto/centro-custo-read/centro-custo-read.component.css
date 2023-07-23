@@ -1,0 +1,59 @@
+table {
+  width: 100%;
+}
+
+.edit {
+  margin-right: 10px;
+}
+
+.edit>i {
+  color: #d9cd26;
+}
+
+.delete>i {
+  color: #e35e6b;
+  cursor: pointer;
+}
+
+th {
+  background-color: #e35e6b !important;
+  color: white;
+  font-size: 1rem;
+}
+
+.align-right {
+  text-align: right !important;
+}
+
+.align-center {
+  text-align: center !important;
+}
+
+
+.search-container{
+  margin-bottom: 2em;
+  width: 100%;
+}
+
+.search-container form{
+  width: 30%;
+  position: relative;
+}
+
+.search-container input{
+  padding: 0.5em;
+  width: 100%;
+  text-align: center;
+}
+
+.filter-form-field {
+  max-width: 750px;
+}
+
+.font-msg {
+  padding: 1rem;
+  font-size: 1.1rem;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  font-weight: 600;
+}

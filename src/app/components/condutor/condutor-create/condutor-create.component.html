@@ -1,0 +1,100 @@
+
+
+<mat-card>
+
+  <mat-card-title>{{condutor.id != 0 ? 'Editar Condutor' : 'Novo Condutor'}}</mat-card-title>
+
+  <form>
+
+    <mat-form-field>
+      <mat-label>Pessoa</mat-label>
+      <input matInput name="idPessoa" [(ngModel)]="condutor.idPessoa" />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Nome do condutor</mat-label>
+      <input matInput name="nome" [(ngModel)]="condutor.nome" />
+    </mat-form-field>
+
+
+    <h4>Situação do Condutor</h4>
+    <mat-form-field>
+      <mat-label>Selecione a situação do condutor</mat-label>
+      <select matNativeControl id="situacao" required>
+        <option value="" disabled selected></option>
+        <option value=1>Ativo</option>
+        <option value=0>inativo</option>
+
+      </select>
+    </mat-form-field>
+
+
+    <h4>Categoria da CNH</h4>
+    <mat-form-field>
+      <mat-label>Selecione a categoria da CNH</mat-label>
+      <mat-select matNativeControl id="categoria" required>
+        <mat-option value="" disabled selected></mat-option>
+        <mat-option value=A>CNH tipo "A"</mat-option>
+        <mat-option value=B>CNH tipo "B"</mat-option>
+        <mat-option value=C>CNH tipo "C"</mat-option>
+        <mat-option value=D>CNH tipo "D"</mat-option>
+        <mat-option value=E>CNH tipo "E"</mat-option>
+        <mat-option value=ESPECIAL>CNH Especial</mat-option>
+
+      </mat-select>
+    </mat-form-field>
+
+
+
+    <mat-form-field>
+      <mat-label>CNH</mat-label>
+      <input matInput name="cnh" [(ngModel)]="condutor.cnh" type="text"  maxlength="10"  />
+
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Data vencimento da CNH</mat-label>
+      <input matInput name="dataVencimento" type="date" [(ngModel)]="condutor.dataVencimento" />
+
+    </mat-form-field>
+
+    <h4>Estado da CNH</h4>
+    <mat-form-field >
+      <mat-label>Selecione o estado da CNH</mat-label>
+      <mat-select disableRipple matNativeControl id="estado" required>
+        <mat-option value="" disabled selected></mat-option>
+        <mat-option value=sp>São Paulo - SP</mat-option>
+        <mat-option value=go>Goiás - GO</mat-option>
+        <mat-option value=rj>Rio Janeiro - RJ</mat-option>
+        <mat-option value=mt>Mato Grosso - MT</mat-option>
+        <mat-option value=mg>Minas Gerais - MG</mat-option>
+        <mat-option value=to>Tocantins - TO</mat-option>
+
+      </mat-select>
+    </mat-form-field>
+
+
+
+    <mat-form-field>
+      <mat-label>Pontuação CNH</mat-label>
+      <input matInput name="pontos" [(ngModel)]="condutor.pontos" type="text"  maxlength="2"  />
+
+    </mat-form-field>
+
+
+
+
+  </form>
+
+
+
+  <div>
+    <button mat-raised-button color="primary">
+      Salvar
+    </button>
+    <button mat-raised-button color="warn" (click)="cancel()" style="margin-left: 5px;">
+      Cancelar
+    </button>
+  </div>
+
+</mat-card>

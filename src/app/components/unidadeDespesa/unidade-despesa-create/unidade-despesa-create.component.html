@@ -1,0 +1,52 @@
+<mat-card>
+
+  <mat-card-title>
+
+    {{unidadeDespesa.id != 0 ? 'Editar Unidade de Despesa' : 'Salvar Unidade de Despesa'}}
+
+  </mat-card-title>
+
+  <form>
+    <mat-form-field>
+      <mat-label>CNPJ da Unidade de Despesa</mat-label>
+      <input type="text" pattern="[0-9]{2}\.?[0-9]{3}\.?[0-9]{3}\/?[0-9]{4}\-?[0-9]{2}*" maxlength="18" matInput name="cgc_uni" [(ngModel)]="unidadeDespesa.cgc_uni" />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Nome da Unidade de Despesa</mat-label>
+      <input matInput name="nome" [(ngModel)]="unidadeDespesa.nome" />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Endreço da Unidade de Despesa</mat-label>
+      <input matInput name="endereco_uni" [(ngModel)]="unidadeDespesa.endereco_uni" />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Email da Unidade de Despesa</mat-label>
+      <input matInput type="email_uni" name="emailUni" [(ngModel)]="unidadeDespesa.email_uni" />
+
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Telefone da Unidade de Despesa</mat-label>
+      <input matInput type="tel"  pattern="[0-9]{2} [0-9]{4}-[0-9]{4}" placeholder="11 9999-9999" name="telefone_uni" [(ngModel)]="unidadeDespesa.telefone_uni" />
+
+    </mat-form-field>
+  </form>
+
+  <div>
+    <button
+    mat-raised-button
+    color="primary"
+    (click) = "saveUnidade()">
+
+
+    {{unidadeDespesa.id != 0 ? 'Editar' : 'Salvar'}}
+    </button>
+    <button mat-raised-button color="warn" (click)="cancel()" style="margin-left: 5px;">
+      Cancelar
+    </button>
+  </div>
+
+</mat-card>

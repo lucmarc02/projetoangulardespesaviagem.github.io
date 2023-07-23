@@ -1,0 +1,48 @@
+<mat-card>
+
+  <mat-card-title>{{centroCusto.id !== 0  ? 'Editar Centro de Custo' : 'Novo Centro de Custo'}}</mat-card-title>
+
+  <form>
+
+    <mat-checkbox [(ngModel)]="centroCusto.ativo" color="primary" name="ativo" labelPosition="before">
+      Centro de Custo ativo?
+    </mat-checkbox>
+
+
+
+    <mat-form-field>
+      <mat-label>Nome do Centro de Custo</mat-label>
+      <input matInput name="nomecentro" [(ngModel)]="centroCusto.nomeCentro" required />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Código Centro de Custo</mat-label>
+      <input matInput name="codigocentrocusto" [(ngModel)]="centroCusto.codigocentrocusto" required />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>
+        {{ centroCusto.id === 0 ? "Selecione a Unidade de Despesa" : centroCusto.unidadeDespesa.nome }}
+      </mat-label>
+      <mat-select [(ngModel)]="centroCusto.unidadeDespesa" name="unidadeDespesa">
+        <mat-option *ngFor="let unidadeDespesa of unidadeDespesas" [value]="unidadeDespesa">
+          {{ unidadeDespesa.nome }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+
+
+  </form>
+
+  <div>
+    <button mat-raised-button color="primary" (click)="saveCentroCusto()">
+
+      {{centroCusto.id != 0 ? 'Editar' : 'Salvar'}}
+    </button>
+    <button mat-raised-button color="warn" (click)="cancel()" style="margin-left: 5px;">
+      Cancelar
+    </button>
+  </div>
+
+</mat-card>
